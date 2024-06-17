@@ -1,0 +1,18 @@
+<app-pagination 
+[totalItems]="500" 
+[itemsPerPage]="20" 
+[currentPage]="currentPage" 
+(changePage)="changePage($event)"
+></app-pagination>
+
+<div class="container">
+    <input type="text" #inputEl (focus)="0">
+    <button (click)="onBtnClick(inputEl)">Submit</button>
+    <app-demo [message]="inputVal" *ngIf="!toDestroy">
+        <p #temp>User has eneterd following text: {{ inputVal }}</p>
+    </app-demo>
+    <br><br>
+    <button (click)="DestroyComponent()">Show / Hide</button>
+</div>
+
+
